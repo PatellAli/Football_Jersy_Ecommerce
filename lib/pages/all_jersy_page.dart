@@ -12,15 +12,24 @@ class AllJersyPage extends StatefulWidget {
 }
 
 class _AllJersyPageState extends State<AllJersyPage> {
+  String searchQuery = "";
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 12.0, vertical: 12),
       child: Column(
         children: [
-          const SearchBarText(),
+          SearchBarText(
+            onSearch: (query) {
+              setState(() {
+                searchQuery = query;
+              });
+            },
+          ),
           const SizedBox(height: 40),
-          JersyTileAll(),
+          JersyTileAll(
+            searchQuery: searchQuery,
+          ),
         ],
       ),
     );

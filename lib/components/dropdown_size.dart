@@ -3,7 +3,12 @@ import 'package:football_jersy_ecommerce/database/jersy.dart';
 
 class DropdownSize extends StatefulWidget {
   final Jersy cloth;
-  const DropdownSize({super.key, required this.cloth});
+  final ValueChanged<String?> onSizeSelected; // Callback to pass selected size
+  const DropdownSize({
+    super.key,
+    required this.cloth,
+    required this.onSizeSelected,
+  });
 
   @override
   State<DropdownSize> createState() => _DropdownSizeState();
@@ -47,6 +52,7 @@ class _DropdownSizeState extends State<DropdownSize> {
                     setState(() {
                       selectedSize = value;
                     });
+                    widget.onSizeSelected(value);
                   },
                   hint: const Text('Choose Size'),
                   isExpanded: true,

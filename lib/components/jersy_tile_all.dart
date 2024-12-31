@@ -3,7 +3,12 @@ import 'package:football_jersy_ecommerce/database/jersy_database.dart';
 import 'package:football_jersy_ecommerce/pages/display_page.dart';
 
 class JersyTileAll extends StatefulWidget {
-  JersyTileAll({super.key});
+  final String searchQuery;
+
+  JersyTileAll({
+    super.key,
+    required this.searchQuery,
+  });
 
   @override
   State<JersyTileAll> createState() => _JersyTileAllState();
@@ -33,6 +38,13 @@ class _JersyTileAllState extends State<JersyTileAll> {
 
         //loaded
         final info = snapshot.data!;
+        final filteredInfo = widget.searchQuery.isEmpty
+            ? info
+            : info.where((cloth) {
+                return cloth.name
+                    .toLowerCase()
+                    .contains(widget.searchQuery.toLowerCase());
+              }).toList();
 
         return Expanded(
           child: GridView.builder(
@@ -43,9 +55,9 @@ class _JersyTileAllState extends State<JersyTileAll> {
               childAspectRatio: 1, // Adjust item height
               mainAxisExtent: 250,
             ),
-            itemCount: info.length,
+            itemCount: filteredInfo.length,
             itemBuilder: (context, index) {
-              final cloth = info[index];
+              final cloth = filteredInfo[index];
               return GestureDetector(
                 onTap: () {
                   Navigator.push(

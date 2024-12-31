@@ -19,27 +19,80 @@ class _ShopPageState extends State<ShopPage> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
-      child: Column(
+      child: ListView(
         children: [
-          const SizedBox(height: 42),
-
-          // Hot Picks and See All Row
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.end,
+          Column(
             children: [
+              const SizedBox(height: 20),
+
               const Text(
-                'Hot Picks',
+                "TOP JERSYS",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 28,
                 ),
               ),
-            ],
-          ),
 
-          JersyTile(
-            count: 4,
+              const Divider(),
+
+              // Hot Picks and See All Row
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Text(
+                    'AC MILAN',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              ),
+
+              JersyTile(
+                count: 2,
+                Jersyname: "Ac Milan",
+              ),
+
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Text(
+                    'Real Madrid',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              ),
+
+              JersyTile(
+                count: 2,
+                Jersyname: "Real Madrid",
+              ),
+
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Text(
+                    'Juventus',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                ],
+              ),
+
+              JersyTile(
+                count: 2,
+                Jersyname: "Juventus",
+              ),
+            ],
           ),
         ],
       ),

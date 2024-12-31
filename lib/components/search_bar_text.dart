@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class SearchBarText extends StatelessWidget {
-  const SearchBarText({super.key});
+  Function(String)? onSearch;
+  SearchBarText({super.key, required this.onSearch});
 
   @override
   Widget build(BuildContext context) {
-    return const TextField(
-      decoration: InputDecoration(
+    return TextField(
+      onChanged: (value) => onSearch!(value),
+      decoration: const InputDecoration(
         fillColor: Colors.white,
         filled: true,
         hintText: 'Search',

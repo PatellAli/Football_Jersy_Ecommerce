@@ -11,8 +11,11 @@ class BottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 12.0),
+      padding: EdgeInsets.symmetric(
+        vertical: 10.0,
+      ),
       child: GNav(
+        padding: EdgeInsets.all(14),
         color: Color.fromARGB(255, 26, 50, 99),
         activeColor: Color.fromARGB(255, 250, 185, 91),
         tabActiveBorder: Border.all(color: Colors.grey),
@@ -26,12 +29,16 @@ class BottomNavBar extends StatelessWidget {
             text: 'Shop',
           ),
           GButton(
-            icon: Icons.all_inbox,
-            text: 'Main',
+            icon: Icons.list,
+            text: 'Browrse',
           ),
           GButton(
-            icon: Icons.shopping_bag,
+            icon: Icons.shopping_cart,
             text: 'Cart',
+          ),
+          GButton(
+            icon: Icons.archive,
+            text: 'Your Orders',
           ),
         ],
       ),

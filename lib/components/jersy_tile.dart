@@ -4,13 +4,11 @@ import 'package:football_jersy_ecommerce/pages/display_page.dart';
 
 class JersyTile extends StatelessWidget {
   int? count;
+  String Jersyname;
 
   final db = JersyDatabase();
 
-  JersyTile({
-    super.key,
-    required this.count,
-  });
+  JersyTile({super.key, required this.count, required this.Jersyname});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +24,11 @@ class JersyTile extends StatelessWidget {
 
         //loaded
         final info = snapshot.data!;
+        final filteredInfo = info.where((cloth) {
+          return cloth.name.toLowerCase().contains(Jersyname.toLowerCase());
+        }).toList();
 
-        final itemcount = count ?? info.length;
+        final itemcount = count ?? filteredInfo.length;
 
         //DATA in UI
         return SizedBox(
@@ -36,7 +37,7 @@ class JersyTile extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemCount: itemcount,
             itemBuilder: (context, index) {
-              final cloth = info[index];
+              final cloth = filteredInfo[index];
 
               return GestureDetector(
                 onTap: () {
