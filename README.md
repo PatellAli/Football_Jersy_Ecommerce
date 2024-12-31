@@ -82,6 +82,33 @@ The app is developed using:
 
 ## Screenshots
 _Add screenshots of the app here._
+## Home Page
+![Home Page](/lib/images/screenShots/HomePage.png)
+
+## Browrse Page
+![Browrse Page](/lib/images/screenShots/Browrse.png)
+
+## Display Page
+![Display Page](/lib/images/screenShots/DisplayPage.png)
+
+## Cart Page
+![Cart Page](/lib/images/screenShots/CartPage.png)
+
+## Checkout Cash on delivery
+![Checkout Cash on delivery](/lib/images/screenShots/CheckoutCOD.png)
+
+## Checkout Online Payment
+![Checkout Online Payment](/lib/images/screenShots/CheckoutOP.png)
+
+## Orders Page
+![Orders Page](/lib/images/screenShots/Orders.png)
+
+## Login Page
+![Login Page](/lib/images/screenShots/Login.png)
+
+## Signup Page
+![Signup Page](/lib/images/screenShots/Signup.png)
+
 
 ## License
 
