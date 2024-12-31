@@ -90,4 +90,4 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ## Contact
 
 For queries or suggestions, feel free to reach out:
-- Email: [your_email@example.com]
+- Email: [mdalipatel150@gmail.com]
